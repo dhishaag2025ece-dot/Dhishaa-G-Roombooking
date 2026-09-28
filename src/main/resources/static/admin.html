@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoomBook - Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+        RoomBook Admin
+    </div>
+
+    <nav>
+        <a href="rooms.html">Rooms</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+</header>
+
+
+<main class="admin-page">
+
+    <section class="page-heading">
+        <h1>Admin Dashboard</h1>
+        <p>Manage meeting rooms and their operational status.</p>
+    </section>
+
+
+    <section class="admin-actions">
+
+        <button class="add-room-button"
+                onclick="showAddRoomForm()">
+            + Add New Room
+        </button>
+
+    </section>
+
+
+    <section id="addRoomSection"
+             class="admin-form-section"
+             style="display: none;">
+
+        <h2>Add New Room</h2>
+
+        <form id="addRoomForm">
+
+            <label>Room Name</label>
+            <input type="text"
+                   id="adminRoomName"
+                   required>
+
+            <label>Capacity</label>
+            <input type="number"
+                   id="adminCapacity"
+                   min="1"
+                   required>
+
+            <label>Projector</label>
+            <select id="adminProjector">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label>Whiteboard</label>
+            <select id="adminWhiteboard">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <button type="submit">
+                Add Room
+            </button>
+
+        </form>
+
+        <p id="adminMessage"></p>
+
+    </section>
+
+
+    <section id="adminRoomsContainer"
+             class="admin-rooms-container">
+
+        <p class="loading">
+            Loading rooms...
+        </p>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomBook - Login</title>
+
+    ```
+    <link rel="stylesheet" href="style.css">
+    ```
+
+</head>
+
+<body class="login-page">
+
+<div class="login-container">
+
+    ```
+    <div class="login-card">
+
+        <div class="logo-section">
+            <div class="logo-icon">R</div>
+            <h1>RoomBook</h1>
+            <p>Meeting Room Booking System</p>
+        </div>
+
+        <div class="login-title">
+            <h2>Welcome Back</h2>
+            <p>Login to your RoomBook account</p>
+        </div>
+
+        <form id="loginForm">
+
+            <label for="loginType">Login As</label>
+
+            <select id="loginType">
+                <option value="employee">Employee</option>
+                <option value="admin">Administrator</option>
+            </select>
+
+            <label for="email">Email</label>
+
+            <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+            >
+
+            <label for="password">Password</label>
+
+            <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p id="loginMessage"></p>
+
+    </div>
+    ```
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

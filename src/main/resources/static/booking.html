@@ -1,0 +1,125 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>RoomBook - Book Room</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+        RoomBook
+    </div>
+
+    <nav>
+
+        <a href="rooms.html">
+            Rooms
+        </a>
+
+        <a href="bookings.html">
+            My Bookings
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="booking-page">
+
+    <div class="booking-card">
+
+        <h1>
+            Book a Meeting Room
+        </h1>
+
+        <p class="booking-subtitle">
+            Select your booking time and confirm your reservation.
+        </p>
+
+
+        <form id="bookingForm">
+
+            <label for="employeeId">
+                Employee ID
+            </label>
+
+            <input
+                    type="number"
+                    id="employeeId"
+                    required
+            >
+
+
+            <label for="roomId">
+                Room ID
+            </label>
+
+            <input
+                    type="number"
+                    id="roomId"
+                    readonly
+                    required
+            >
+
+
+            <label for="startTime">
+                Start Time
+            </label>
+
+            <input
+                    type="datetime-local"
+                    id="startTime"
+                    required
+            >
+
+
+            <label for="endTime">
+                End Time
+            </label>
+
+            <input
+                    type="datetime-local"
+                    id="endTime"
+                    required
+            >
+
+
+            <button type="submit">
+                Confirm Booking
+            </button>
+
+        </form>
+
+
+        <p id="bookingMessage"></p>
+
+
+        <a href="rooms.html" class="back-link">
+            ← Back to Rooms
+        </a>
+
+    </div>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+```

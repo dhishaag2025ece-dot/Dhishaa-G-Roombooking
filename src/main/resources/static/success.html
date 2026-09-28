@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoomBook - Booking Confirmed</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+        RoomBook
+    </div>
+
+    <nav>
+        <a href="rooms.html">Rooms</a>
+        <a href="bookings.html">My Bookings</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+</header>
+
+
+<main class="success-page">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h1>Thank You!</h1>
+
+        <h2>Booking Confirmed</h2>
+
+        <p>
+            Your meeting room has been successfully booked.
+        </p>
+
+        <div id="bookingDetails" class="booking-details">
+            Loading booking details...
+        </div>
+
+        <div class="success-buttons">
+
+            <a href="rooms.html" class="primary-button">
+                Book Another Room
+            </a>
+
+            <a href="bookings.html" class="secondary-button">
+                View My Bookings
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+
+    const bookingDetails =
+        document.getElementById("bookingDetails");
+
+    const savedBooking =
+        localStorage.getItem("lastBooking");
+
+    if (savedBooking) {
+
+        const booking =
+            JSON.parse(savedBooking);
+
+        bookingDetails.innerHTML = `
+            <p>
+                <strong>Booking ID:</strong>
+                ${booking.id || "-"}
+            </p>
+
+            <p>
+                <strong>Room ID:</strong>
+                ${booking.room?.id || booking.roomId || "-"}
+            </p>
+
+            <p>
+                <strong>Employee ID:</strong>
+                ${booking.employee?.id || booking.employeeId || "-"}
+            </p>
+
+            <p>
+                <strong>Start:</strong>
+                ${booking.startTime || "-"}
+            </p>
+
+            <p>
+                <strong>End:</strong>
+                ${booking.endTime || "-"}
+            </p>
+
+            <p class="confirmed-status">
+                ✓ CONFIRMED
+            </p>
+        `;
+
+    } else {
+
+        bookingDetails.innerHTML = `
+            <p>Booking details are not available.</p>
+        `;
+    }
+
+</script>
+
+</body>
+</html>
